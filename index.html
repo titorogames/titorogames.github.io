@@ -10,7 +10,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://titorogames.github.io/">
 <meta property="og:image" content="https://titorogames.github.io/images/loopingdots/feature.jpg">
-<link rel="icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="icon-192.png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
   :root {
@@ -31,11 +32,14 @@
 
   header.top { padding:20px 0; }
   header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  .brand { font-weight:700; font-size:1.1rem; color:var(--fg); text-decoration:none; letter-spacing:-.01em; white-space:nowrap; }
+  .brand { display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:1.1rem; color:var(--fg); text-decoration:none; letter-spacing:-.01em; white-space:nowrap; }
+  .brand img { width:36px; height:36px; border-radius:10px; }
   nav a { color:var(--muted); text-decoration:none; font-size:.95rem; margin-left:18px; }
   nav a:hover { color:var(--fg); }
 
-  .hero { padding:40px 0 48px; }
+  .hero { padding:40px 0 48px; display:flex; align-items:center; gap:32px; }
+  .hero .logo { width:160px; height:160px; border-radius:36px; flex:none; box-shadow:var(--shadow); }
+  @media (max-width:600px) { .hero { flex-direction:column; align-items:flex-start; gap:20px; } .hero .logo { width:112px; height:112px; border-radius:26px; } }
   .hero h1 { margin:0 0 10px; font-size:clamp(2rem,6vw,2.75rem); line-height:1.15; letter-spacing:-.02em; }
   .hero p { margin:0; color:var(--muted); font-size:1.1rem; max-width:34em; }
 
@@ -91,7 +95,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./">Titoro Games</a>
+    <a class="brand" href="./"><img src="images/titoro/logo.webp" width="36" height="36" alt="">Titoro Games</a>
     <nav><a href="#games">Games</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
   </div>
 </header>
@@ -99,8 +103,11 @@
 <main>
   <div class="wrap">
     <div class="hero">
+      <img class="logo" src="images/titoro/logo.webp" width="160" height="160" alt="Titoro Games logo: a smiling miner with a pickaxe, gems and coins">
+      <div>
       <h1>Small, cozy mobile games.</h1>
       <p>Titoro Games is an indie studio making relaxing puzzle games you can pick up for a few minutes and put down with a smile.</p>
+      </div>
     </div>
 
     <section id="games">
